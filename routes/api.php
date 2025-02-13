@@ -3,17 +3,24 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['prefix' => 'util_command'], function () {
+    Route::get('gitPullOrigin', [App\Http\Controllers\util_command\GitCommands::class, 'gitPullOrigin']);
+    Route::get('gitRestore', [App\Http\Controllers\util_command\GitCommands::class, 'gitRestore']);
+});
+
+Route::group(['prefix' => 'util_generator'], function () {
+    Route::get('createReferenceID/{identifier}', [App\Http\Controllers\util_generator\ReferenceID::class, 'create']);
+});
+
+Route::group(['prefix' => 'util_query'], function () {
+    Route::get('insertGetID', [App\Http\Controllers\util_query\InsertGetID::class, 'insertGetID']);
+    Route::get('fetchSingle', [App\Http\Controllers\util_query\FetchSingle::class, 'fetchSingle']);
+    Route::get('fetchAll', [App\Http\Controllers\util_query\FetchAll::class, 'fetchAll']);
+    Route::get('fetchPaginate', [App\Http\Controllers\util_query\FetchPaginate::class, 'fetchPaginate']);
+    Route::get('delete', [App\Http\Controllers\util_query\Delete::class, 'delete']);
+    Route::get('update', [App\Http\Controllers\util_query\Update::class, 'update']);
 });

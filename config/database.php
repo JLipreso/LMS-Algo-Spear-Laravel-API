@@ -36,7 +36,7 @@ return [
     'connections' => [
         'npm_lms' => [
             'driver'    => 'mysql',
-            'host'      => '88.222.242.33', // [ '127.0.0.1', '88.222.242.33']
+            'host'      => '127.0.0.1', // [ '127.0.0.1', '88.222.242.33']
             'port'      => '3306',
             'database'  => 'lipreso_lms_algo_spear',
             'username'  => 'lipreso_lms_algo_spear',

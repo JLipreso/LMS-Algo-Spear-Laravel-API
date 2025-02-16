@@ -17,6 +17,7 @@ Route::group(['prefix' => 'util_generator'], function () {
 });
 
 Route::group(['prefix' => 'util_query'], function () {
+    Route::get('count', [App\Http\Controllers\util_query\Count::class, 'count']);
     Route::get('insertGetID', [App\Http\Controllers\util_query\InsertGetID::class, 'insertGetID']);
     Route::get('fetchSingle', [App\Http\Controllers\util_query\FetchSingle::class, 'fetchSingle']);
     Route::get('fetchAll', [App\Http\Controllers\util_query\FetchAll::class, 'fetchAll']);

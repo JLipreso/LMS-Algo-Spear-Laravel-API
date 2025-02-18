@@ -26,3 +26,7 @@ Route::group(['prefix' => 'util_query'], function () {
     Route::get('delete', [App\Http\Controllers\util_query\Delete::class, 'delete']);
     Route::get('update', [App\Http\Controllers\util_query\Update::class, 'update']);
 });
+
+Route::group(['prefix' => 'util_quiz'], function () {
+    Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
+});

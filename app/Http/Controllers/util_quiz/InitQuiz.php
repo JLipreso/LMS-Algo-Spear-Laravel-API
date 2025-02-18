@@ -24,7 +24,8 @@ class InitQuiz extends Controller
                 $list[] = [
                     "header"    => $category,
                     "questions" => $questions,
-                    "score"     => 0
+                    "score"     => 0,
+                    "completed" => false
                 ];
             }
             return $list;

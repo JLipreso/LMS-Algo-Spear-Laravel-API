@@ -22,6 +22,7 @@ Route::group(['prefix' => 'util_query'], function () {
     Route::get('fetchSingle', [App\Http\Controllers\util_query\FetchSingle::class, 'fetchSingle']);
     Route::get('fetchAll', [App\Http\Controllers\util_query\FetchAll::class, 'fetchAll']);
     Route::get('fetchPaginate', [App\Http\Controllers\util_query\FetchPaginate::class, 'fetchPaginate']);
+    Route::get('fetchRandomRow', [App\Http\Controllers\util_query\FetchRandomRow::class, 'fetch']);
     Route::get('delete', [App\Http\Controllers\util_query\Delete::class, 'delete']);
     Route::get('update', [App\Http\Controllers\util_query\Update::class, 'update']);
 });

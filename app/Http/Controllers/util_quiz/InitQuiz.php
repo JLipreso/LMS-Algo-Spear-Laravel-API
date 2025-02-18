@@ -23,7 +23,8 @@ class InitQuiz extends Controller
                 $questions      = InitQuiz::fetchQuestions($category->group_refid, $request['limit']);
                 $list[] = [
                     "header"    => $category,
-                    "questions" => $questions
+                    "questions" => $questions,
+                    "score"     => 0
                 ];
             }
             return $list;

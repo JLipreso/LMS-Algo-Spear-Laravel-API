@@ -30,7 +30,7 @@ class CheckReads extends Controller
                 if($reading == 0) {
                     return [
                         "success" => false,
-                        "message" => "<p>Please read <span class='text-danger'>" + $group->name + "</span> first.</p>"
+                        "message" => "<p>Please read <span class='text-danger'>" . $group->name . "</span> first.</p>"
                     ];
                 }
             }

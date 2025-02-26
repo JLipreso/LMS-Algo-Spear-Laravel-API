@@ -40,4 +40,32 @@ class CheckReads extends Controller
             ];
         }
     }
+
+    public static function visualViewsChecker(Request $request) {
+        return [
+            "ARRAY"            => CheckReads::visualByCode($request['user_refid'], 'ARRAY'),
+            "LINKED_LIST"      => CheckReads::visualByCode($request['user_refid'], 'LINKED_LIST'),
+            "GRAPHS"           => CheckReads::visualByCode($request['user_refid'], 'GRAPHS'),
+            "STACKS"           => CheckReads::visualByCode($request['user_refid'], 'STACKS'),
+            "QUEUES"           => CheckReads::visualByCode($request['user_refid'], 'QUEUES'),
+            "SORTING"          => CheckReads::visualByCode($request['user_refid'], 'SORTING'),
+            "SEARCH"           => CheckReads::visualByCode($request['user_refid'], 'SEARCH')
+        ];
+    }
+
+    public static function visualByCode($user_refid, $group_code) {
+        $views = DB::connection('npm_lms')->table('visual_views')
+        ->where([
+            ['user_refid', $user_refid],
+            ['group_code', $group_code]
+        ])
+        ->count();
+
+        if($views > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

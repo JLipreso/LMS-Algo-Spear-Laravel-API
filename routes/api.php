@@ -31,4 +31,5 @@ Route::group(['prefix' => 'util_quiz'], function () {
     Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
     Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
     Route::get('checkReads', [App\Http\Controllers\util_quiz\CheckReads::class, 'check']);
+    Route::get('resetReading', [App\Http\Controllers\util_quiz\ResetReading::class, 'reset']);
 });

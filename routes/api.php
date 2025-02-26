@@ -29,5 +29,6 @@ Route::group(['prefix' => 'util_query'], function () {
 
 Route::group(['prefix' => 'util_quiz'], function () {
     Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
-    Route::post('saveQuize', [App\Http\Controllers\util_quiz\SaveQuize::class, 'save']);
+    Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
+    Route::get('checkReads', [App\Http\Controllers\util_quiz\CheckReads::class, 'check']);
 });

@@ -28,8 +28,11 @@ Route::group(['prefix' => 'util_query'], function () {
 });
 
 Route::group(['prefix' => 'util_quiz'], function () {
-    Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetch']);
+    Route::get('initExcercises', [App\Http\Controllers\util_quiz\InitQuiz::class, 'excercises']);
+    Route::get('initQuiz', [App\Http\Controllers\util_quiz\InitQuiz::class, 'quize']);
     Route::get('checkReads', [App\Http\Controllers\util_quiz\CheckReads::class, 'check']);
     Route::get('visualViewsChecker', [App\Http\Controllers\util_quiz\CheckReads::class, 'visualViewsChecker']);
     Route::get('resetReading', [App\Http\Controllers\util_quiz\ResetReading::class, 'reset']);
+    Route::get('fetchRandomExam', [App\Http\Controllers\util_quiz\InitQuiz::class, 'fetchRandomExam']);
+    Route::get('videoTutorials', [App\Http\Controllers\util_quiz\VideoTutorials::class, 'fetch']);
 });
